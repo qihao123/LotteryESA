@@ -1,0 +1,9 @@
+{
+  "assets": {
+    "dir": "dist",
+    "include": ["**/*"]
+  },
+  "function": {
+    "path": "dist/assets/index-DmXeuy-f.js"
+  }
+}
