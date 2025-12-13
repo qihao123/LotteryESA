@@ -4,6 +4,6 @@
     "include": ["**/*"]
   },
   "function": {
-    "path": "dist/assets/index-DmXeuy-f.js"
+    "path": "dist/assets/index.js"
   }
 }
