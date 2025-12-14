@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { FaFileImport, FaFileExport, FaUserPlus, FaDownload, FaQrcode, FaTimes } from 'react-icons/fa';
+import { FaFileImport, FaFileExport, FaUserPlus, FaDownload, FaTimes } from 'react-icons/fa';
 import * as XLSX from 'xlsx';
 import { toast } from 'react-toastify';
-import { QRCodeSVG } from 'qrcode.react';
+// import { QRCodeSVG } from 'qrcode.react';
 
 const ParticipantsManager = ({ participants, setParticipants }) => {
   const [newParticipant, setNewParticipant] = useState({ name: '', department: '' });
-  const [showQRCode, setShowQRCode] = useState(false);
+  // const [showQRCode, setShowQRCode] = useState(false);
   const [employeeInput, setEmployeeInput] = useState({ name: '', department: '' });
   const [showEmployeeForm, setShowEmployeeForm] = useState(false);
-  const [employeeFormUrl, setEmployeeFormUrl] = useState('');
-  const [serverPort] = useState('5173');
+  // const [employeeFormUrl, setEmployeeFormUrl] = useState('');
+  // const [serverPort] = useState('5173');
 
+  // 二维码功能已屏蔽
+  /*
   // 获取本地IP地址
   const getLocalIP = () => {
     return new Promise((resolve) => {
@@ -63,6 +65,7 @@ const ParticipantsManager = ({ participants, setParticipants }) => {
     
     generateUrl();
   }, [serverPort]);
+  */
 
   // 导入Excel文件
   const handleImport = (e) => {
@@ -266,14 +269,16 @@ const ParticipantsManager = ({ participants, setParticipants }) => {
           <button className="add-btn" onClick={handleAddParticipant}>
             <FaUserPlus /> 添加
           </button>
-          <button className="scan-btn" onClick={() => setShowQRCode(!showQRCode)}>
+          {/* 二维码功能已屏蔽 */}
+          {/* <button className="scan-btn" onClick={() => setShowQRCode(!showQRCode)}>
             <FaQrcode /> {showQRCode ? '关闭' : '生成二维码'}
-          </button>
+          </button> */}
         </div>
       </div>
       
+      {/* 二维码功能已屏蔽 */}
       {/* 二维码显示区域 */}
-      {showQRCode && (
+      {/* {showQRCode && (
         <div className="scan-section">
           <div className="qrcode-container">
             <h4>员工扫码填写信息</h4>
@@ -292,7 +297,7 @@ const ParticipantsManager = ({ participants, setParticipants }) => {
             </button>
           </div>
         </div>
-      )}
+      )} */}
       
       {/* 员工输入表单（实际应用中应该是一个独立的页面） */}
       {showEmployeeForm && (
